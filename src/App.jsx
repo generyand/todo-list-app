@@ -3,7 +3,6 @@ import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
 import Header from "./components/Header";
 import { useLocalStorage } from "./utils/useLocalStorage";
-import { SpeedInsights } from "@vercel/speed-insights/react";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -34,7 +33,6 @@ function App() {
 
   return (
     <>
-      <SpeedInsights />
       <main className="main | max-w-[32rem] mx-auto sm:mt-[10vh] bg-white md:rounded-md h-screen w-full md:w-auto md:h-auto py-4 overflow-y-scroll sm:max-h-[40rem]">
         <Header />
         <TodoInput onAddTask={handleAddTask} />
