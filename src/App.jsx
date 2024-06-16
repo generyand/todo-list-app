@@ -31,18 +31,6 @@ function App() {
     setTodos(getItem());
   }, []);
 
-  /* Store todos in local storage */
-  // useEffect(() => {
-  //   localStorage.setItem("todos", JSON.stringify(todos));
-  // }, [todos]);
-
-  // useEffect(() => {
-  //   const todosItems = JSON.parse(localStorage.getItem("todos"));
-  //   if (todosItems) {
-  //     setTodos(todosItems);
-  //   }
-  // }, []);
-
   return (
     <main className="max-w-[32rem] mx-auto  md:mt-[10vh] bg-white md:rounded-md h-screen w-full md:w-auto md:h-auto py-4">
       {/* <div className=""> */}

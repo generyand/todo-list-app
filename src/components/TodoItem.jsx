@@ -1,5 +1,5 @@
-import { TrashIcon } from "@heroicons/react/16/solid";
 import React from "react";
+import { TrashIcon } from "@heroicons/react/16/solid";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useLocalStorage } from "../utils/useLocalStorage";

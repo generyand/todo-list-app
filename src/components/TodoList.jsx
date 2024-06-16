@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import CompletedTodos from "./CompletedTodos";
 import ActiveTodos from "./ActiveTodos";
 
