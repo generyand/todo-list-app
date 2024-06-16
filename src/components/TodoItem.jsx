@@ -2,6 +2,7 @@ import { TrashIcon } from "@heroicons/react/16/solid";
 import React from "react";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useLocalStorage } from "../utils/useLocalStorage";
 
 export default function TodoItem({
   completed,
@@ -10,6 +11,9 @@ export default function TodoItem({
   setTodos,
   onDeleteTask,
 }) {
+  const { setItem } = useLocalStorage("todos");
+  const [isChecked, setIsChecked] = useState(todo.completed);
+  
   const handleToggleTodo = (id) => {
     const updatedTodos = todos.map((todoItem) => {
       if (todoItem.id === id) {
@@ -21,6 +25,7 @@ export default function TodoItem({
       return todoItem;
     });
     setTodos(updatedTodos);
+    setItem(updatedTodos);
   };
 
   const handleDeleteTask = () => {
@@ -28,10 +33,8 @@ export default function TodoItem({
     onDeleteTask(todo.id);
   };
 
-  const [isChecked, setIsChecked] = useState(todo.completed);
-
   return (
-    <motion.div
+    <motion.li
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{
         opacity: 1,
@@ -51,7 +54,6 @@ export default function TodoItem({
         onChange={() => handleToggleTodo(todo.id)}
         type="checkbox"
         id={`${todo.id}`}
-        // onClick={() => handleToggleTodo(todo.id)}
       />
       <label htmlFor={`${todo.id}`}>{todo.task}</label>
       <div className="flex items-center justify-center place-self-end">
@@ -60,6 +62,6 @@ export default function TodoItem({
           className="w-6 h-6 text-red-500 cursor-pointer place-self-end"
         />
       </div>
-    </motion.div>
+    </motion.li>
   );
 }

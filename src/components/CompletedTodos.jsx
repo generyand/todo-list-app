@@ -18,7 +18,7 @@ export default function CompletedTodos({ setTodos, todos, onDeleteTask }) {
                 todo={todo}
                 setTodos={setTodos}
                 onDeleteTask={onDeleteTask}
-                key={todo.task}
+                key={todo.id}
               />
             );
           })}

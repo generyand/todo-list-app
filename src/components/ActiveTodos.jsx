@@ -8,7 +8,7 @@ export default function ActiveTodos({ setTodos, todos, onDeleteTask }) {
   return (
     <div className="px-2 mb-5 md:px-4">
       <p className="mb-3 text-sm font-bold text-gray-600">TO DOs</p>
-      <div className="flex flex-col gap-2">
+      <ul className="flex flex-col gap-2">
         <AnimatePresence>
           {activeTodos.map((todo) => {
             return (
@@ -17,12 +17,12 @@ export default function ActiveTodos({ setTodos, todos, onDeleteTask }) {
                 todo={todo}
                 setTodos={setTodos}
                 onDeleteTask={onDeleteTask}
-                key={todo.task}
+                key={todo.id}
               />
             );
           })}
         </AnimatePresence>
-      </div>
+      </ul>
     </div>
   );
 }

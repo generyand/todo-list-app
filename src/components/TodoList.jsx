@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import TodoItem from "./TodoItem";
 import CompletedTodos from "./CompletedTodos";
-import { AnimatePresence } from "framer-motion";
 import ActiveTodos from "./ActiveTodos";
 
 export default function TodoList({ setTodos, todos, onDeleteTask }) {
