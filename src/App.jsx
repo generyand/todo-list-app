@@ -3,6 +3,7 @@ import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
 import Header from "./components/Header";
 import { useLocalStorage } from "./utils/useLocalStorage";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 function App() {
   const [todos, setTodos] = useState([]);
