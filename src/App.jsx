@@ -33,7 +33,7 @@ function App() {
   }, []);
 
   return (
-    <main className="max-w-[32rem] mx-auto md:mt-[10vh] bg-white md:rounded-md h-screen w-full md:w-auto md:h-auto py-4 md:overflow-x-scroll md:max-h-[40rem]">
+    <main className="max-w-[32rem] mx-auto md:mt-[10vh] bg-white md:rounded-md h-screen w-full md:w-auto md:h-auto py-4 md:overflow-y-scroll md:max-h-[40rem]">
       {/* <div className=""> */}
       <Header />
       <TodoInput onAddTask={handleAddTask} />
