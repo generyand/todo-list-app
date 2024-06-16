@@ -1,5 +1,6 @@
 import CompletedTodos from "./CompletedTodos";
 import ActiveTodos from "./ActiveTodos";
+import NoTasksComponent from "./NoTasksComponent";
 
 export default function TodoList({ setTodos, todos, onDeleteTask }) {
   return (
@@ -14,6 +15,7 @@ export default function TodoList({ setTodos, todos, onDeleteTask }) {
         onDeleteTask={onDeleteTask}
         todos={todos}
       />
+      {todos.length === 0 && <NoTasksComponent />}
     </>
   );
 }
