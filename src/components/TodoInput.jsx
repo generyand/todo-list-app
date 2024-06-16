@@ -12,7 +12,7 @@ export default function TodoInput({ onAddTask }) {
   };
 
   return (
-    <form onSubmit={handleAddTask} className="px-2 mb-5 border-b md:px-4">
+    <form onSubmit={handleAddTask} className="px-3 mb-5 border-b md:px-4">
       <div className="flex items-center justify-between w-full gap-4 px-2 py-1 mb-6 leading-tight text-gray-700 border rounded">
         <input
           value={newTask}
