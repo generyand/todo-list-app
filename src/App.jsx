@@ -33,16 +33,18 @@ function App() {
   }, []);
 
   return (
-    <main className="max-w-[32rem] mx-auto md:mt-[10vh] bg-white md:rounded-md h-screen w-full md:w-auto md:h-auto py-4 md:overflow-y-scroll md:max-h-[40rem]">
-      {/* <div className=""> */}
-      <Header />
-      <TodoInput onAddTask={handleAddTask} />
-      <TodoList
-        setTodos={setTodos}
-        todos={todos}
-        onDeleteTask={handleDeleteTask}
-      />
-    </main>
+    <>
+      <SpeedInsights />
+      <main className="main | max-w-[32rem] mx-auto sm:mt-[10vh] bg-white md:rounded-md h-screen w-full md:w-auto md:h-auto py-4 overflow-y-scroll sm:max-h-[40rem]">
+        <Header />
+        <TodoInput onAddTask={handleAddTask} />
+        <TodoList
+          setTodos={setTodos}
+          todos={todos}
+          onDeleteTask={handleDeleteTask}
+        />
+      </main>
+    </>
   );
 }
 

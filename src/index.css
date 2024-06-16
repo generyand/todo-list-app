@@ -8,24 +8,39 @@
   }
 
   body {
-    /* background: rgb(37, 99, 235);
+    background: rgb(37, 99, 235);
     background: linear-gradient(
       0deg,
       rgba(37, 99, 235, 1) 0%,
       rgba(85, 200, 247, 1) 100%
-    ); */
+    );
     font-family: "Inter", sans-serif;
-    @apply text-gray-800 md:bg-sky-500;
+    @apply text-gray-800;
+  }
+
+  @media screen and (min-width: 768px) {
+    body {
+      @apply bg-white;
+    }
   }
 
   .outlined {
     outline: 1px solid red;
   }
 
+  .main::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+  }
+
+  .main {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+  }
+
   #checklist {
     --background: #fff;
     --text: #414856;
-    --check: #3b82f6;
+    --check: #0ea5e9;
     --disabled: #c3c8de;
     --width: 100px;
     --height: 180px;
