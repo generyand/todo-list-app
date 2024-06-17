@@ -9,10 +9,8 @@ export default function ClearTasksModal({
 }) {
   const handleClearAllTasks = () => {
     setShowClearModal(true);
-
     setShowMenu(false);
     setTodos([]);
-
     const { removeItem } = useLocalStorage("todos");
     removeItem();
   };

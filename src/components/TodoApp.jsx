@@ -5,6 +5,7 @@ import TodoList from "./TodoList";
 import Header from "./Header";
 import { useLocalStorage } from "../utils/useLocalStorage";
 import Menu from "./Menu";
+import { v4 as uuidv4 } from "uuid";
 
 export default function TodoApp({ setDarkMode, darkMode }) {
   const [todos, setTodos] = useState([]);
@@ -14,7 +15,7 @@ export default function TodoApp({ setDarkMode, darkMode }) {
   const handleAddTask = (newTask) => {
     if (!newTask) return;
     const newTaskObj = {
-      id: todos.length + 1,
+      id: uuidv4(),
       task: newTask,
       completed: false,
     };

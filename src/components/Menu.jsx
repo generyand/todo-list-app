@@ -11,8 +11,6 @@ import {
 } from "@heroicons/react/24/outline";
 import ClearTasksModal from "./ClearTasksModal";
 
-useLocalStorage;
-
 export default function Menu({ setShowMenu, setTodos, setDarkMode, darkMode }) {
   const [showClearModal, setShowClearModal] = useState(false);
   const { setItem } = useLocalStorage("theme");
@@ -48,7 +46,7 @@ export default function Menu({ setShowMenu, setTodos, setDarkMode, darkMode }) {
             Gotta<span className="text-sky-500 dark:text-sky-400">Dos</span>
           </h1>
           <XMarkIcon
-            className="w-6 h-6 dark:text-white"
+            className="w-6 h-6 cursor-pointer dark:text-white"
             onClick={() => setShowMenu(false)}
           />
         </header>
@@ -57,7 +55,7 @@ export default function Menu({ setShowMenu, setTodos, setDarkMode, darkMode }) {
         <ul className="flex flex-col text-lg">
           <li>
             <button
-              className="flex items-center w-full gap-4 px-4 py-3 transition text-start hover:bg-sky-500 active:bg-sky-500 hover:text-white active:text-white"
+              className="flex items-center w-full gap-4 px-4 py-3 transition text-start active:bg-sky-500 hover:text-white active:text-white"
               type="button"
               onClick={() => setShowMenu(false)}
             >
@@ -70,7 +68,7 @@ export default function Menu({ setShowMenu, setTodos, setDarkMode, darkMode }) {
           </li>
           <li>
             <button
-              className="flex items-center w-full gap-4 px-4 py-3 transition text-start hover:bg-sky-500 active:bg-sky-500 active:text-white"
+              className="flex items-center w-full gap-4 px-4 py-3 transition text-start active:bg-sky-500 active:text-white"
               type="button"
               onClick={toggleDarkMode}
             >
