@@ -32,7 +32,7 @@ function App() {
   }, []);
 
   return (
-    <main className="main | max-w-[32rem] mx-auto sm:mt-[10vh] bg-white sm:rounded-md h-screen w-full md:w-auto md:h-auto py-4 overflow-y-scroll sm:max-h-[40rem]">
+    <main className="main | max-w-[32rem] mx-auto sm:mt-[10vh] bg-white sm:rounded-md h-screen w-full md:w-auto md:h-auto overflow-y-scroll sm:max-h-[40rem] relative">
       <Header />
       <TodoInput onAddTask={handleAddTask} />
       <TodoList
