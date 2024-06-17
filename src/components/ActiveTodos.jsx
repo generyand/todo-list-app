@@ -3,7 +3,12 @@ import { AnimatePresence } from "framer-motion";
 import TodoItem from "./TodoItem";
 import { motion } from "framer-motion";
 
-export default function ActiveTodos({ setTodos, todos, onDeleteTask, darkMode }) {
+export default function ActiveTodos({
+  setTodos,
+  todos,
+  onDeleteTask,
+  darkMode,
+}) {
   const activeTodos = todos.filter((todo) => !todo.completed);
 
   return (
