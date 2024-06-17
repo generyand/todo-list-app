@@ -15,7 +15,7 @@ export default function NoTasksComponent() {
           src={notaskImage}
           alt="no tasks image"
         />
-        <p className="mx-auto text-center text-base text-gray-400 mb-8 max-w-[45ch] px-8">
+        <p className="mx-auto text-center text-base text-gray-400 mb-8 max-w-[45ch] px-8 dark:text-gray-300">
           Seems like you don't have any tasks yet. Add a task to start tracking.
         </p>
       </motion.div>
