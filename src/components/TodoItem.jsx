@@ -10,6 +10,7 @@ export default function TodoItem({
   todo,
   setTodos,
   onDeleteTask,
+  darkMode,
 }) {
   const { setItem } = useLocalStorage("todos");
   const [isChecked, setIsChecked] = useState(todo.completed);
@@ -33,6 +34,8 @@ export default function TodoItem({
     onDeleteTask(todo.id);
   };
 
+  // alert(darkMode);
+
   return (
     <motion.li
       initial={{ opacity: 0, scale: 0.5 }}
@@ -46,11 +49,13 @@ export default function TodoItem({
         scale: 0.5,
         transition: { delay: !isChecked ? 0.5 : 0 },
       }}
-      className="px-4 py-3 border rounded dark:border-sky-700 "
+      className={`${
+        darkMode ? "dark" : "light"
+      } todo-item | px-4 py-3 border rounded bg-white dark:bg-sky-700 dark:border-sky-700`}
       id="checklist"
     >
       <input
-        className=" dark:bg-sky-600"
+        className="bg-transparent"
         checked={completed}
         onChange={() => handleToggleTodo(todo.id)}
         type="checkbox"

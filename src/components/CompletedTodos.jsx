@@ -20,6 +20,7 @@ export default function CompletedTodos({ setTodos, todos, onDeleteTask }) {
           {completedTodos.map((todo) => {
             return (
               <TodoItem
+                darkMode
                 completed={true}
                 todos={todos}
                 todo={todo}

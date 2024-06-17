@@ -31,14 +31,14 @@ export default function ClearTasksModal({
           <button
             onClick={handleClearAllTasks}
             type="button"
-            className="flex-1 py-2 text-white rounded-sm bg-sky-500 "
+            className="flex-1 py-2 text-white rounded-sm hover:bg-sky-400 bg-sky-500 "
           >
             Yes, I'm sure
           </button>
           <button
             type="button"
             onClick={() => setShowClearModal(false)}
-            className="flex-1 py-2 rounded-sm outline outline-sky-500 outline-1 hover:bg-sky-500 active:bg-sky-500"
+            className="flex-1 py-2 rounded-sm outline outline-sky-500 outline-1 hover:bg-sky-500 active:bg-sky-500 active:text-white hover:text-white"
           >
             Cancel
           </button>

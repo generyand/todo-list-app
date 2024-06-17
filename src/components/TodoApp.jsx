@@ -14,6 +14,7 @@ export default function TodoApp({ setDarkMode, darkMode }) {
 
   const handleAddTask = (newTask) => {
     if (!newTask) return;
+
     const newTaskObj = {
       id: uuidv4(),
       task: newTask,
@@ -48,6 +49,7 @@ export default function TodoApp({ setDarkMode, darkMode }) {
       <Header setShowMenu={setShowMenu} />
       <TodoInput onAddTask={handleAddTask} />
       <TodoList
+        darkMode
         setTodos={setTodos}
         todos={todos}
         onDeleteTask={handleDeleteTask}

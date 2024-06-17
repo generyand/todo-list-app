@@ -53,9 +53,9 @@ export default function Menu({ setShowMenu, setTodos, setDarkMode, darkMode }) {
 
         {/* MENU BUTTONS*/}
         <ul className="flex flex-col text-lg">
-          <li>
+          <li className="active:bg-sky-500 active:text-white">
             <button
-              className="flex items-center w-full gap-4 px-4 py-3 transition text-start active:bg-sky-500 hover:text-white active:text-white"
+              className="flex items-center w-full gap-4 px-4 py-3 transition text-start "
               type="button"
               onClick={() => setShowMenu(false)}
             >
@@ -66,9 +66,9 @@ export default function Menu({ setShowMenu, setTodos, setDarkMode, darkMode }) {
               About
             </button>
           </li>
-          <li>
+          <li className="active:bg-sky-500 active:text-white">
             <button
-              className="flex items-center w-full gap-4 px-4 py-3 transition text-start active:bg-sky-500 active:text-white"
+              className="flex items-center w-full gap-4 px-4 py-3 transition text-start "
               type="button"
               onClick={toggleDarkMode}
             >
@@ -86,9 +86,9 @@ export default function Menu({ setShowMenu, setTodos, setDarkMode, darkMode }) {
               Current Theme: {darkMode ? "Dark" : "Light"}
             </button>
           </li>
-          <li>
+          <li className="active:bg-sky-500 active:text-white">
             <button
-              className="flex items-center w-full gap-4 px-4 py-3 transition text-start active:bg-sky-500 hover:text-white active:text-white"
+              className="flex items-center w-full gap-4 px-4 py-3 transition text-start "
               type="button"
               onClick={() => setShowClearModal(true)}
             >
