@@ -16,11 +16,13 @@ export default function TodoItem({
   const [isChecked, setIsChecked] = useState(todo.completed);
 
   const handleToggleTodo = (id) => {
+    const currentDate = new Date();
     const updatedTodos = todos.map((todoItem) => {
       if (todoItem.id === id) {
         return {
           ...todoItem,
           completed: !todoItem.completed,
+          dateCompleted: !todoItem.completed ? currentDate : undefined,
         };
       }
       return todoItem;

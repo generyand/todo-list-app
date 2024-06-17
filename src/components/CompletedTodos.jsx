@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 export default function CompletedTodos({ setTodos, todos, onDeleteTask }) {
   const completedTodos = todos.filter((todo) => todo.completed);
+  completedTodos.sort((a, b) => b.dateCompleted - a.dateCompleted);
 
   return (
     <div className="px-3 pb-5 md:px-4">

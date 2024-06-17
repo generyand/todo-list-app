@@ -15,10 +15,14 @@ export default function TodoApp({ setDarkMode, darkMode }) {
   const handleAddTask = (newTask) => {
     if (!newTask) return;
 
+    const currentDate = new Date();
+
     const newTaskObj = {
       id: uuidv4(),
       task: newTask,
       completed: false,
+      dateAdded: currentDate,
+      dateCompleted: undefined,
     };
 
     setTodos([...todos, newTaskObj]);
