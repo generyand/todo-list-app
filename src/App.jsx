@@ -28,7 +28,7 @@ function App() {
 
   useEffect(() => {
     const { getItem } = useLocalStorage("todos");
-    setTodos(getItem());
+    setTodos(getItem() || []);
   }, []);
 
   return (
