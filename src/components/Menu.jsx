@@ -52,7 +52,7 @@ export default function Menu({ setShowMenu, setTodos, setDarkMode, darkMode }) {
         className="w-[85%] z-20 absolute h-full bg-white dark:bg-sky-950 dark:text-white"
       >
         {/* HEADER */}
-        <header className="flex items-center justify-between w-full gap-2 px-4 py-3 mb-2 text-xl font-bold text-gray-700 border-b text-end md:text-2xl md:gap-5 ">
+        <header className="flex items-center justify-between w-full gap-2 px-4 py-3 mb-2 text-xl font-bold text-gray-700 border-b dark:border-b-sky-700 text-end md:text-2xl md:gap-5 ">
           <h1 className="dark:text-white">
             Gotta<span className="text-sky-500 dark:text-sky-400">Dos</span>
           </h1>
