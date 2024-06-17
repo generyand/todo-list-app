@@ -26,7 +26,7 @@ export default function TodoInput({ onAddTask }) {
         />
         <button
           type="submit"
-          className="px-3 py-2 font-bold text-white rounded bg-sky-500 active:bg-sky-600 dark:bg-sky-400"
+          className="px-3 py-2 font-bold text-white rounded bg-sky-500 active:bg-sky-600"
         >
           <PlusIcon className="w-5 h-5" />
         </button>
