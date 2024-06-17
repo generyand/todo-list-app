@@ -12,9 +12,12 @@ import {
 useLocalStorage;
 
 export default function Menu({ setShowMenu, setTodos, setDarkMode, darkMode }) {
+  const { setItem } = useLocalStorage("theme");
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
-    // setShowMenu(false);
+
+    if (darkMode) setItem("light");
+    else setItem("dark");
   };
 
   const handleClearAllTasks = () => {
