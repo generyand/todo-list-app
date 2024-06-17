@@ -7,7 +7,7 @@ export default function CompletedTodos({ setTodos, todos, onDeleteTask }) {
 
   return (
     <div className="px-3 pb-5 md:px-4">
-      <p className="mb-3 text-sm font-bold text-gray-600">COMPLETED</p>
+      <p className="mb-3 text-sm font-bold text-gray-600 dark:text-neutral-50">COMPLETED</p>
       <div className="flex flex-col gap-2">
         <AnimatePresence>
           {completedTodos.map((todo) => {

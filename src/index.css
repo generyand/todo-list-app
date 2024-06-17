@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    @apply transition-colors duration-100 ease-linear;
+  }
+
   html {
     height: 100%;
   }
@@ -31,15 +35,19 @@
     scrollbar-width: none; /* Hide scrollbar for Firefox */
   }
 
+  .main.dark {
+    --text: red;
+  }
+
   #checklist {
-    --background: #fff;
-    --text: #414856;
+    /* --background: #fff; */
+    /* --text: red; */
     --check: #0ea5e9;
     --disabled: #c3c8de;
     --width: 100px;
     --height: 180px;
     --border-radius: 10px;
-    background: var(--background);
+    /* background: var(--background); */
     /* width: var(--width); */
     /* height: var(--height); */
     /* border-radius: var(--border-radius); */

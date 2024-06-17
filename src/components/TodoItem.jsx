@@ -13,7 +13,7 @@ export default function TodoItem({
 }) {
   const { setItem } = useLocalStorage("todos");
   const [isChecked, setIsChecked] = useState(todo.completed);
-  
+
   const handleToggleTodo = (id) => {
     const updatedTodos = todos.map((todoItem) => {
       if (todoItem.id === id) {
@@ -46,10 +46,11 @@ export default function TodoItem({
         scale: 0.5,
         transition: { delay: !isChecked ? 0.5 : 0 },
       }}
-      className="px-4 py-3 border rounded "
+      className="px-4 py-3 border rounded dark:border-sky-700 "
       id="checklist"
     >
       <input
+        className=" dark:bg-sky-600"
         checked={completed}
         onChange={() => handleToggleTodo(todo.id)}
         type="checkbox"
