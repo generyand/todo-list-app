@@ -3,10 +3,12 @@ import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
 import Header from "./components/Header";
 import { useLocalStorage } from "./utils/useLocalStorage";
+import Menu from "./components/Menu";
 
 function App() {
   const [todos, setTodos] = useState([]);
   const { setItem } = useLocalStorage("todos");
+  const [showMenu, setShowMenu] = useState(false);
 
   const handleAddTask = (newTask) => {
     if (!newTask) return;
@@ -33,7 +35,8 @@ function App() {
 
   return (
     <main className="main | max-w-[32rem] mx-auto sm:mt-[10vh] bg-white sm:rounded-md h-screen w-full md:w-auto md:h-auto overflow-y-scroll sm:max-h-[40rem] relative">
-      <Header />
+      {showMenu && <Menu setShowMenu={setShowMenu} />}
+      <Header setShowMenu={setShowMenu}/>
       <TodoInput onAddTask={handleAddTask} />
       <TodoList
         setTodos={setTodos}
