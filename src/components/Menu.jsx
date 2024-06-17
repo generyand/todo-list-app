@@ -21,7 +21,7 @@ export default function Menu({ setShowMenu }) {
             onClick={() => setShowMenu(false)}
           />
         </header>
-        <ul className="flex flex-col">
+        <ul className="flex flex-col text-lg">
           <li className="p-3 transition hover:bg-sky-500 active:bg-sky-500 hover:text-white active:text-white">
             <button>About</button>
           </li>
