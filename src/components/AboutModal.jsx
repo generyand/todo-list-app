@@ -27,16 +27,24 @@ export default function AboutModal({ setShowAboutModal }) {
         </header>
         <div className="flex flex-col gap-4 content">
           <p className="">
-            GottaDos is a straightforward to-do list application designed to
-            help you manage your tasks with ease. Simply add your tasks, and
-            cross them off once completed.
+            <span className="font-bold">
+              Gotta<span className="text-sky-500 dark:text-sky-400">Dos</span>
+            </span>{" "}
+            is a straightforward to-do list application designed to help you
+            manage your tasks with ease. Simply add your tasks, and cross them
+            off once completed.
           </p>
           <p>
             As a developer, I know how easy it is to get bogged down by
-            complexity. That's why I created GottaDos — a simple to-do list app
-            that lets you focus on what matters most. Let's get things done
-            together!
+            complexity. That's why I created{" "}
+            <span className="font-bold">
+              Gotta<span className="text-sky-500 dark:text-sky-400">Dos</span>
+            </span>{" "}
+            — a simple to-do list app that lets you focus on what matters most.
+            Let's get things done together!
           </p>
+
+          <p className="">Hi, Jamie! Miss you, et!</p>
           <p className="mt-4 text-xs text-center">
             © 2024{" "}
             <a
