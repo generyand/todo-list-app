@@ -63,7 +63,7 @@ export default function Menu({ setShowMenu, setTodos, setDarkMode, darkMode }) {
         </header>
 
         {/* MENU BUTTONS*/}
-        <ul className="flex flex-col text-lg">
+        <ul className="flex flex-col text-lg text-sky-900 dark:text-sky-50">
           {/* <li className="active:bg-sky-500 active:text-white">
             <button
               className="flex items-center w-full gap-4 px-4 py-3 transition text-start "
