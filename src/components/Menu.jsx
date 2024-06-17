@@ -10,9 +10,11 @@ import {
   DocumentMagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
 import ClearTasksModal from "./ClearTasksModal";
+import AboutModal from "./AboutModal";
 
 export default function Menu({ setShowMenu, setTodos, setDarkMode, darkMode }) {
   const [showClearModal, setShowClearModal] = useState(false);
+  const [showAboutModal, setShowAboutModal] = useState(false);
   const { setItem } = useLocalStorage("theme");
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -22,7 +24,12 @@ export default function Menu({ setShowMenu, setTodos, setDarkMode, darkMode }) {
   };
 
   return (
-    <div className="fixed left-0 top-0 z-[999] w-full sm:absolute sm:h-full h-[100vh] text-neutral-800 ">
+    <motion.div
+      initial={false}
+      animate={false}
+      exit={{ opacity: 0 }}
+      className="fixed left-0 top-0 z-[999] w-full sm:absolute sm:h-full h-[100vh] text-neutral-800 "
+    >
       {/* CLEAR TASKS MODAL */}
       <AnimatePresence>
         {showClearModal && (
@@ -32,6 +39,10 @@ export default function Menu({ setShowMenu, setTodos, setDarkMode, darkMode }) {
             setShowMenu={setShowMenu}
           />
         )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {showAboutModal && <AboutModal setShowAboutModal={setShowAboutModal} />}
       </AnimatePresence>
 
       <motion.div
@@ -53,11 +64,24 @@ export default function Menu({ setShowMenu, setTodos, setDarkMode, darkMode }) {
 
         {/* MENU BUTTONS*/}
         <ul className="flex flex-col text-lg">
-          <li className="active:bg-sky-500 active:text-white">
+          {/* <li className="active:bg-sky-500 active:text-white">
             <button
               className="flex items-center w-full gap-4 px-4 py-3 transition text-start "
               type="button"
               onClick={() => setShowMenu(false)}
+            >
+              <HomeIcon
+                className="w-6 h-6 text-sky-500"
+                aria-hidden="true"
+              />
+              Home
+            </button>
+          </li> */}
+          <li className="active:bg-sky-500 active:text-white">
+            <button
+              className="flex items-center w-full gap-4 px-4 py-3 transition text-start "
+              type="button"
+              onClick={setShowAboutModal}
             >
               <DocumentMagnifyingGlassIcon
                 className="w-6 h-6 text-sky-500"
@@ -93,7 +117,7 @@ export default function Menu({ setShowMenu, setTodos, setDarkMode, darkMode }) {
               onClick={() => setShowClearModal(true)}
             >
               <TrashIcon className="w-6 h-6 text-red-500" aria-hidden="true" />
-              Clear All Tasks
+              Remove All Tasks
             </button>
           </li>
         </ul>
@@ -105,6 +129,6 @@ export default function Menu({ setShowMenu, setTodos, setDarkMode, darkMode }) {
         animate={{ opacity: "40%" }}
         className="absolute z-10 w-full h-full bg-black opacity-40 outlined"
       ></motion.div>
-    </div>
+    </motion.div>
   );
 }

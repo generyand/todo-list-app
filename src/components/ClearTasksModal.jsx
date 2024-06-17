@@ -24,7 +24,7 @@ export default function ClearTasksModal({
     >
       <div className="bg-white w-[80%] p-3 z-10 rounded-md dark:bg-sky-900 dark:text-sky-50">
         <p className="mb-4">
-          Are you sure you want to clear all tasks? This action cannot be
+          Are you sure you want to remove all tasks? This action cannot be
           undone.
         </p>
         <div className="flex justify-around gap-2">

@@ -6,6 +6,7 @@ import Header from "./Header";
 import { useLocalStorage } from "../utils/useLocalStorage";
 import Menu from "./Menu";
 import { v4 as uuidv4 } from "uuid";
+import { AnimatePresence } from "framer-motion";
 
 export default function TodoApp({ setDarkMode, darkMode }) {
   const [todos, setTodos] = useState([]);
@@ -42,14 +43,17 @@ export default function TodoApp({ setDarkMode, darkMode }) {
 
   return (
     <main className="main | max-w-[32rem] mx-auto sm:mt-[10vh] dark:bg-sky-950 dark:text-white bg-sky-50 sm:rounded-md h-[100vh] w-full sm:w-auto overflow-y-scroll sm:max-h-[40rem] relative sm:shadow-md sm:outline sm:outline-1 sm:outline-gray-300">
-      {showMenu && (
-        <Menu
-          darkMode={darkMode}
-          setDarkMode={setDarkMode}
-          setShowMenu={setShowMenu}
-          setTodos={setTodos}
-        />
-      )}
+      <AnimatePresence>
+        {showMenu && (
+          <Menu
+            darkMode={darkMode}
+            setDarkMode={setDarkMode}
+            setShowMenu={setShowMenu}
+            setTodos={setTodos}
+          />
+        )}
+      </AnimatePresence>
+
       <Header setShowMenu={setShowMenu} />
       <TodoInput onAddTask={handleAddTask} />
       <TodoList
