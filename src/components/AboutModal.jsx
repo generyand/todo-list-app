@@ -25,7 +25,7 @@ export default function AboutModal({ setShowAboutModal }) {
             onClick={handleAbout}
           />
         </header>
-        <div className="flex flex-col gap-4 content">
+        <div className="flex flex-col gap-4 text-sky-900 dark:text-sky-50">
           <p className="">
             <span className="font-bold">
               Gotta<span className="text-sky-500 dark:text-sky-400">Dos</span>
