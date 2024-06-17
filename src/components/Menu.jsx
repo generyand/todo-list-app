@@ -2,10 +2,19 @@ import React from "react";
 import Header from "./Header";
 import { XMarkIcon } from "@heroicons/react/16/solid";
 import { AnimatePresence, easeInOut, motion, spring } from "framer-motion";
+import { useLocalStorage } from "../utils/useLocalStorage";
+useLocalStorage;
 
-export default function Menu({ setShowMenu }) {
+export default function Menu({ setShowMenu, setTodos }) {
+  const handleClearAllTasks = () => {
+    setShowMenu(false);
+    setTodos([]);
+    const { removeItem } = useLocalStorage("todos");
+    removeItem();
+  };
+
   return (
-    <div className="fixed left-0 right-0 z-10 w-full h-[100vh] md:h-full sm:static">
+    <div className="fixed left-0 right-0 z-10 w-full h-[100vh] md:h-auto sm:static">
       <motion.div
         initial={{ opacity: 0, x: "-100%" }}
         animate={{ opacity: 1, x: 0 }}
@@ -22,14 +31,32 @@ export default function Menu({ setShowMenu }) {
           />
         </header>
         <ul className="flex flex-col text-lg">
-          <li className="p-3 transition hover:bg-sky-500 active:bg-sky-500 hover:text-white active:text-white">
-            <button>About</button>
+          <li>
+            <button
+              className="w-full p-3 transition text-start hover:bg-sky-500 active:bg-sky-500 hover:text-white active:text-white"
+              type="button"
+              onClick={() => setShowMenu(false)}
+            >
+              About
+            </button>
           </li>
-          <li className="p-3 transition hover:bg-sky-500 active:bg-sky-500 hover:text-white active:text-white">
-            <button>Theme</button>
+          <li>
+            <button
+              className="w-full p-3 transition text-start hover:bg-sky-500 active:bg-sky-500 hover:text-white active:text-white"
+              type="button"
+              onClick={() => setShowMenu(false)}
+            >
+              Theme
+            </button>
           </li>
-          <li className="p-3 transition hover:bg-sky-500 active:bg-sky-500 hover:text-white active:text-white">
-            <button>Clear All Tasks</button>
+          <li>
+            <button
+              className="w-full p-3 transition text-start hover:bg-sky-500 active:bg-sky-500 hover:text-white active:text-white"
+              type="button"
+              onClick={handleClearAllTasks}
+            >
+              Clear All Tasks
+            </button>
           </li>
         </ul>
       </motion.div>
@@ -38,7 +65,7 @@ export default function Menu({ setShowMenu }) {
         onClick={() => setShowMenu(false)}
         initial={{ opacity: 0 }}
         animate={{ opacity: "40%" }}
-        className="absolute w-full h-full bg-black opacity-40 outlined"
+        className="absolute z-10 w-full h-full bg-black opacity-40 outlined"
       ></motion.div>
     </div>
   );

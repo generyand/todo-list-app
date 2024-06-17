@@ -34,9 +34,9 @@ function App() {
   }, []);
 
   return (
-    <main className="main | max-w-[32rem] mx-auto sm:mt-[10vh] bg-white sm:rounded-md h-screen w-full md:w-auto md:h-auto overflow-y-scroll sm:max-h-[40rem] relative">
-      {showMenu && <Menu setShowMenu={setShowMenu} />}
-      <Header setShowMenu={setShowMenu}/>
+    <main className="main | max-w-[32rem] mx-auto sm:mt-[10vh] bg-white sm:rounded-md h-auto w-full md:w-auto overflow-y-scroll sm:max-h-[40rem] relative sm:shadow-md sm:outline sm:outline-1 sm:outline-gray-300">
+      {showMenu && <Menu setShowMenu={setShowMenu} setTodos={setTodos} />}
+      <Header setShowMenu={setShowMenu} />
       <TodoInput onAddTask={handleAddTask} />
       <TodoList
         setTodos={setTodos}
