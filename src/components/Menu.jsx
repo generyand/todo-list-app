@@ -5,7 +5,7 @@ import { AnimatePresence, easeInOut, motion, spring } from "framer-motion";
 
 export default function Menu({ setShowMenu }) {
   return (
-    <div className="fixed left-0 right-0 z-10 w-full h-full sm:static">
+    <div className="fixed left-0 right-0 z-10 w-full h-[100vh] md:h-full sm:static">
       <motion.div
         initial={{ opacity: 0, x: "-100%" }}
         animate={{ opacity: 1, x: 0 }}
@@ -35,6 +35,7 @@ export default function Menu({ setShowMenu }) {
       </motion.div>
 
       <motion.div
+        onClick={() => setShowMenu(false)}
         initial={{ opacity: 0 }}
         animate={{ opacity: "40%" }}
         className="absolute w-full h-full bg-black opacity-40 outlined"
