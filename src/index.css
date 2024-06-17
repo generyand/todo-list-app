@@ -44,7 +44,7 @@
     /* height: var(--height); */
     /* border-radius: var(--border-radius); */
     /* position: relative; */
-    box-shadow: 0 10px 30px rgba(65, 72, 86, 0.05);
+    /* box-shadow: 0 10px 30px rgba(65, 72, 86, 0.01); */
     /* padding: 30px 85px; */
     display: grid;
     grid-template-columns: 30px auto auto;
