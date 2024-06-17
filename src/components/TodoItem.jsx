@@ -53,7 +53,7 @@ export default function TodoItem({
       }}
       className={`${
         darkMode ? "dark" : "light"
-      } todo-item | px-4 py-3 border rounded bg-white dark:bg-sky-700 dark:border-sky-700`}
+      } todo-item | px-4 py-3 border rounded bg-white dark:bg-sky-800 dark:border-sky-700`}
       id="checklist"
     >
       <input
