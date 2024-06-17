@@ -63,7 +63,7 @@
   }
 
   .todo-item label {
-    color: var(--text);
+    /* color: var(--text); */
     position: relative;
     cursor: pointer;
     display: grid;
@@ -71,6 +71,7 @@
     width: fit-content;
     transition: color 0.3s ease;
     margin-right: 20px;
+    @apply text-sky-900 dark:text-sky-50;
   }
 
   .todo-item label::before,

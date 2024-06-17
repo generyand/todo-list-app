@@ -51,9 +51,7 @@ export default function TodoItem({
         scale: 0.5,
         transition: { delay: !isChecked ? 0.5 : 0 },
       }}
-      className={`${
-        darkMode ? "dark" : "light"
-      } todo-item | px-4 py-3 border rounded bg-white dark:bg-sky-800 dark:border-sky-700`}
+      className="todo-item | px-4 py-3 border rounded bg-white dark:bg-sky-800 dark:border-sky-700"
       id="checklist"
     >
       <input
@@ -63,7 +61,9 @@ export default function TodoItem({
         type="checkbox"
         id={`${todo.id}`}
       />
-      <label htmlFor={`${todo.id}`}>{todo.task}</label>
+      <label className="text-sky-900" htmlFor={`${todo.id}`}>
+        {todo.task}
+      </label>
       <div className="flex items-center justify-center place-self-end">
         <TrashIcon
           onClick={handleDeleteTask}
