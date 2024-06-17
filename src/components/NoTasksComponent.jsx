@@ -9,6 +9,7 @@ export default function NoTasksComponent() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0, scale: 0.5 }}
+        transition={{ duration: 1, delay: 0.75 }}
       >
         <img
           className="mx-auto w-[50%]"

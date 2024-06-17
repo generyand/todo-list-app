@@ -1,6 +1,7 @@
 import React from "react";
+import { useState } from "react";
 import { XMarkIcon } from "@heroicons/react/16/solid";
-import { easeInOut, motion, spring } from "framer-motion";
+import { AnimatePresence, easeInOut, motion } from "framer-motion";
 import { useLocalStorage } from "../utils/useLocalStorage";
 import {
   SunIcon,
@@ -8,10 +9,12 @@ import {
   TrashIcon,
   DocumentMagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
+import ClearTasksModal from "./ClearTasksModal";
 
 useLocalStorage;
 
 export default function Menu({ setShowMenu, setTodos, setDarkMode, darkMode }) {
+  const [showClearModal, setShowClearModal] = useState(false);
   const { setItem } = useLocalStorage("theme");
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -20,16 +23,19 @@ export default function Menu({ setShowMenu, setTodos, setDarkMode, darkMode }) {
     else setItem("dark");
   };
 
-  const handleClearAllTasks = () => {
-    setShowMenu(false);
-    setTodos([]);
-
-    const { removeItem } = useLocalStorage("todos");
-    removeItem();
-  };
-
   return (
     <div className="fixed left-0 top-0 z-[999] w-full sm:absolute sm:h-full h-[100vh] text-neutral-800 ">
+      {/* CLEAR TASKS MODAL */}
+      <AnimatePresence>
+        {showClearModal && (
+          <ClearTasksModal
+            setShowClearModal={setShowClearModal}
+            setTodos={setTodos}
+            setShowMenu={setShowMenu}
+          />
+        )}
+      </AnimatePresence>
+
       <motion.div
         initial={{ opacity: 0, x: "-100%" }}
         animate={{ opacity: 1, x: 0 }}
@@ -64,7 +70,7 @@ export default function Menu({ setShowMenu, setTodos, setDarkMode, darkMode }) {
           </li>
           <li>
             <button
-              className="flex items-center w-full gap-4 px-4 py-3 transition text-start active:bg-sky-500 active:text-white"
+              className="flex items-center w-full gap-4 px-4 py-3 transition text-start hover:bg-sky-500 active:bg-sky-500 active:text-white"
               type="button"
               onClick={toggleDarkMode}
             >
@@ -84,9 +90,9 @@ export default function Menu({ setShowMenu, setTodos, setDarkMode, darkMode }) {
           </li>
           <li>
             <button
-              className="flex items-center w-full gap-4 px-4 py-3 transition text-start hover:bg-sky-500 active:bg-sky-500 hover:text-white active:text-white"
+              className="flex items-center w-full gap-4 px-4 py-3 transition text-start active:bg-sky-500 hover:text-white active:text-white"
               type="button"
-              onClick={handleClearAllTasks}
+              onClick={() => setShowClearModal(true)}
             >
               <TrashIcon className="w-6 h-6 text-red-500" aria-hidden="true" />
               Clear All Tasks
