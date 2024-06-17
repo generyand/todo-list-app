@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Header({ setShowMenu }) {
   return (
-    <header className="absolute flex items-center w-full gap-2 px-2 py-3 mb-2 text-xl font-bold text-gray-700 text-end md:text-2xl md:gap-5">
+    <header className="absolute flex items-center w-full gap-3 px-2 py-4 mb-2 text-xl font-bold text-gray-700 bg-white text-end md:text-2xl md:gap-5">
       <Bars3BottomLeftIcon
         className="w-6 h-6"
         onClick={() => setShowMenu(true)}

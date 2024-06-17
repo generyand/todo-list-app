@@ -12,8 +12,8 @@ export default function TodoInput({ onAddTask }) {
   };
 
   return (
-    <form onSubmit={handleAddTask} className="px-3 mt-[4.25rem] mb-5 border-b md:px-4">
-      <div className="flex items-center justify-between w-full gap-4 px-2 py-1 mb-6 leading-tight text-gray-700 border rounded">
+    <form onSubmit={handleAddTask} className="px-3 mb-5 border-b mt-[5rem] md:px-4">
+      <div className="flex items-center justify-between w-full gap-4 px-3 py-2 mb-4 leading-tight text-gray-700 bg-white border rounded">
         <input
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)}

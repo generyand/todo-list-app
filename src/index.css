@@ -9,12 +9,12 @@
 
   body {
     font-family: "Inter", sans-serif;
-    @apply text-gray-800 bg-sky-400;
+    @apply text-gray-800 bg-sky-50 sm:bg-sky-400;
   }
 
   @media screen and (max-width: 768px) {
     body {
-      background-color: #fff !important;
+      /* background-color: #fff !important; */
     }
   }
 
