@@ -13,7 +13,7 @@ import ClearTasksModal from "./ClearTasksModal";
 import AboutModal from "./AboutModal";
 
 export default function Menu({ setShowMenu, setTodos, setDarkMode, darkMode }) {
-  const [showClearModal, setShowClearModal] = useState(false);
+  const [showClearTasksModal, setShowClearTasksModal] = useState(false);
   const [showAboutModal, setShowAboutModal] = useState(false);
   const { setItem } = useLocalStorage("theme");
   const toggleDarkMode = () => {
@@ -32,9 +32,9 @@ export default function Menu({ setShowMenu, setTodos, setDarkMode, darkMode }) {
     >
       {/* CLEAR TASKS MODAL */}
       <AnimatePresence>
-        {showClearModal && (
+        {showClearTasksModal && (
           <ClearTasksModal
-            setShowClearModal={setShowClearModal}
+            setShowClearTasksModal={setShowClearTasksModal}
             setTodos={setTodos}
             setShowMenu={setShowMenu}
           />
@@ -114,7 +114,7 @@ export default function Menu({ setShowMenu, setTodos, setDarkMode, darkMode }) {
             <button
               className="flex items-center w-full gap-4 px-4 py-3 transition text-start "
               type="button"
-              onClick={() => setShowClearModal(true)}
+              onClick={() => setShowClearTasksModal(true)}
             >
               <TrashIcon className="w-6 h-6 text-red-500" aria-hidden="true" />
               Remove All Tasks

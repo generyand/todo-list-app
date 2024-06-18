@@ -7,6 +7,8 @@ import { useLocalStorage } from "../utils/useLocalStorage";
 import Menu from "./Menu";
 import { v4 as uuidv4 } from "uuid";
 import { AnimatePresence } from "framer-motion";
+import { Toaster } from "sonner";
+import { motion } from "framer-motion";
 
 export default function TodoApp({ setDarkMode, darkMode }) {
   const [todos, setTodos] = useState([]);
@@ -61,6 +63,22 @@ export default function TodoApp({ setDarkMode, darkMode }) {
         setTodos={setTodos}
         todos={todos}
         onDeleteTask={handleDeleteTask}
+      />
+
+      <Toaster
+        toastOptions={{
+          unstyled: true,
+          classNames: {
+            toast:
+              "shadow-lg bg-white dark:bg-sky-900 flex items-center px-4 py-4 rounded-md gap-4 transition",
+            title: "text-sky-900 dark:text-sky-100",
+            description: "text-red-400",
+            actionButton: "bg-zinc-400",
+            cancelButton: "bg-orange-400",
+            closeButton: "bg-lime-400",
+          },
+        }}
+        position="bottom-center"
       />
     </main>
   );

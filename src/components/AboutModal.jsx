@@ -44,7 +44,7 @@ export default function AboutModal({ setShowAboutModal }) {
             Let's get things done together!
           </p>
 
-          <p className="">Hi, Jamie Denise Cortes ng Manila! 🙋‍♂️😊</p>
+          {/* <p className="">Hi, Jamie Denise Cortes ng Manila! 🙋‍♂️😊</p> */}
           <p className="mt-4 text-xs text-center">
             © 2024{" "}
             <a
@@ -54,7 +54,6 @@ export default function AboutModal({ setShowAboutModal }) {
             >
               Gene Ryan
             </a>{" "}
-            | All Rights Reserved
           </p>
         </div>
       </div>

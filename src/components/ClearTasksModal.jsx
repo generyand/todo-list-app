@@ -1,18 +1,28 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useLocalStorage } from "../utils/useLocalStorage";
+import { toast } from "sonner";
+import { CheckCircleIcon } from "@heroicons/react/24/solid";
 
 export default function ClearTasksModal({
   setTodos,
-  setShowClearModal,
+  setShowClearTasksModal,
   setShowMenu,
 }) {
   const handleClearAllTasks = () => {
-    setShowClearModal(true);
+    setShowClearTasksModal(true);
     setShowMenu(false);
     setTodos([]);
+
     const { removeItem } = useLocalStorage("todos");
     removeItem();
+
+    toast.success("All Tasks Removed", {
+      icon: (
+        <CheckCircleIcon className="w-6 h-6 text-sky-900 dark:text-sky-100" />
+      ),
+      duration: 1500,
+    });
   };
 
   return (
@@ -37,7 +47,7 @@ export default function ClearTasksModal({
           </button>
           <button
             type="button"
-            onClick={() => setShowClearModal(false)}
+            onClick={() => setShowClearTasksModal(false)}
             className="flex-1 py-2 rounded-sm outline outline-sky-500 outline-1 hover:bg-sky-500 active:bg-sky-500 active:text-white hover:text-white"
           >
             Cancel
